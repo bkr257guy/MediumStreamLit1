@@ -16,7 +16,7 @@ if "current_index" not in st.session_state:
     st.session_state.current_index = 0
 
 # Find rows that haven't been categorized yet
-pending_df = df[df['Category'].isna() or df['Category'] == "none"]
+pending_df = df[(df['Category'].isna()) | (df['Category'] == "none")]
 
 if not pending_df.empty:
     # Get the first unsorted entry
