@@ -9,7 +9,7 @@ st.title("Database Entry Categorizer")
 # 1. Establish a free secure connection to a Google Sheet
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-df = conn.read()
+df = conn.read(ttl=0)
 
 # Ensure we track which item we are currently sorting using session state
 if "current_index" not in st.session_state:
